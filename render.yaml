@@ -3,7 +3,6 @@ services:
   - type: web
     name: temu-backend
     env: node
-    rootDir: ./
     buildCommand: npm install
     startCommand: node index.js
     autoDeploy: true
