@@ -5,6 +5,6 @@ services:
     env: node
     rootDir: ./
     buildCommand: npm install
-    startCommand: node index.js
+    startCommand: node src/index.js
     plan: free
     autoDeploy: true
