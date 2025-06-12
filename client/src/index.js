@@ -60,6 +60,18 @@ app.post("/api/order", upload.single("dekont"), (req, res) => {
   });
 });
 
+// ✅ Sipariş listesini dışa açan yeni endpoint
+app.get("/orders.json", (req, res) => {
+  const ordersFilePath = path.join(__dirname, "orders.json");
+  if (fs.existsSync(ordersFilePath)) {
+    const data = fs.readFileSync(ordersFilePath, "utf8");
+    res.setHeader("Content-Type", "application/json");
+    res.send(data);
+  } else {
+    res.status(404).json({ error: "Sipariş dosyası bulunamadı" });
+  }
+});
+
 app.get("/", (req, res) => {
   res.send("✅ Temu Backend Çalışıyor");
 });
