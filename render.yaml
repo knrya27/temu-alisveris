@@ -2,6 +2,7 @@ services:
   - type: web
     name: temu-backend
     env: node
-    buildCommand: npm install
-    startCommand: node index.js
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "node index.js"
     rootDir: .
